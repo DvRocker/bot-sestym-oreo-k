@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "!"
 
-
+console.log("owner bot is Pikachu !");
 
 
 client.on("guildMemberAdd", member => {
