@@ -5,6 +5,23 @@ var prefix = "!"
 
 
 
+client.on("guildMemberAdd", member => {
+  let guild = member.guild;
+  guild.defaultChannel.sendMessage("", {embed: {
+  color: 808080,
+  author: {
+    name: member.user.username,
+    icon_url: member.user.avatarURL
+  },
+  title: guild.name,
+  description: ' *** Go to : #update [ ${member}  ] *** !',
+}}).catch(console.error);
+  }
+);
+
+
+
+
 client.on('message', message => {
          if(message.content === prefix + "closeroom") {
                              if(!message.channel.guild) return message.reply('** This command only for servers**');
