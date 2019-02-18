@@ -150,12 +150,7 @@ clinet.on ("guildMemberRemove", member => {
 
 
 
- client.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });
-});
+ 
 
 client.on('guildMemberAdd', member => {
 
