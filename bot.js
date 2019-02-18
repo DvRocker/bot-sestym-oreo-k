@@ -144,9 +144,6 @@ clinet.on ("guildMemberAdd", member => {
   
 })
 
-clinet.on ("guildMemberRemove", member => {
-   
-})
 
 
 
