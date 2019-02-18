@@ -138,16 +138,21 @@ client.on('message', message => {
 });
 
 client.on ("guildMemberAdd", member => {
+  
    var role = member.guild.roles.find ("name", "Òreo");
    member.addRole (role);
   
+})
+
+clinet.on ("guildMemberRemove", member => {
+   
 })
 
 
 
 client.on("guildMemberAdd", member => {
   let guild = member.guild;
-  guild.defaultChannel.sendMessage("", {embed: {
+  guild.defaultChannel.sendMessage("chat", {embed: {
   color: 808080,
   author: {
     name: member.user.username,
