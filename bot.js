@@ -144,7 +144,7 @@ client.on ("guildMemberAdd", member => {
   
 })
 
-clinet.on ("guildMemberRemove", member => {
+client.on ("guildMemberRemove", member => {
    
 })
 
