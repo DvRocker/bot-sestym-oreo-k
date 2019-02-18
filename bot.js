@@ -155,7 +155,7 @@ clinet.on ("guildMemberRemove", member => {
 client.on('guildMemberAdd', member => {
 
     const channel = member.guild.channels.find('name', 'chat');
-
+  
     const millis = new Date().getTime() - member.user.createdAt.getTime();
     const now = new Date();
     const createdAt = millis / 1000 / 60 / 60 / 24;
@@ -163,26 +163,15 @@ client.on('guildMemberAdd', member => {
 
 
 
-
+  
     const embed = new Discord.RichEmbed()
-
+    
     .setColor("black")
-    .setDescription(**تاريخ دخولك للدسكورد منذ ${createdAt.toFixed(0)} يوم**)
+    .setDescription(`**تاريخ دخولك للدسكورد منذ ${createdAt.toFixed(0)} يوم**`)
     .setAuthor(member.user.tag, member.user.avatarURL);
     channel.sendEmbed(embed);
 
-
-});
-
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const logChannel = member.guild.channels.find(channel => channel.name === "chat");
-    logChannel.send(${member} **Invited by:** <@${inviter.id}>);
-  });
+  
 });
 
 
