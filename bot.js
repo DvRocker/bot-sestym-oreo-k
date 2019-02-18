@@ -269,7 +269,7 @@ client.on("message", message => {
                           }
 });
 
-lient.on('message', message => {
+client.on('message', message => {
     if(message.content == prefix + 'server') {
         var servername = message.guild.name
         var اونر = message.guild.owner
