@@ -295,19 +295,7 @@ client.on('message', message => {
 
 
 
-client.on("guildMemberAdd", member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage("", {embed: {
-  color: 808080,
-  author: {
-    name: member.user.username,
-    icon_url: member.user.avatarURL
-  },
-  title: guild.name,
-  description: ' *** Go to : #update ${user} *** !',
-}}).catch(console.error);
-  }
-);
+
 
 client.on('message', async message =>{
     if (message.author.boss) return;
