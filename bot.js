@@ -138,7 +138,6 @@ client.on('message', message => {
 });
 
 clinet.on ("guildMemberAdd", member => {
-  
    var role = member.guild.roles.find ("name", "Òreo");
    member.addRole (role);
   
