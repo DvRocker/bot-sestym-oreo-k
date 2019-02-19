@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "!"
+var prefix = "#"
 
 
 
@@ -125,7 +125,7 @@ var duration = (upgradeTime * 1000)
 
 
 client.on('message', message => {
-   if (message.content === "!id") {
+   if (message.content === "#id") {
    let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setThumbnail(message.author.avatarURL)
@@ -176,7 +176,7 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('message', message => {
-	var prefix = "!"
+	var prefix = "#"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -215,7 +215,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	var prefix = "!"
+	var prefix = "#"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -254,7 +254,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("!avatar")) {
+    if (message.content.startsWith("#avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -272,7 +272,7 @@ client.on('message', message => {
 
 
 client.on("message", message => {
-    var prefix = "!";
+    var prefix = "#";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
  if (!args[1]) {
@@ -327,7 +327,7 @@ client.on('message', message => {
 
 client.on('message', async message =>{
     if (message.author.boss) return;
-      var prefix = "!";
+      var prefix = "#";
   
   if (!message.content.startsWith(prefix)) return;
       let command = message.content.split(" ")[0];
@@ -386,7 +386,7 @@ client.on('message', async message =>{
   
 
 client.on('message', message => {
-    var prefix = "!";
+    var prefix = "#";
           if(message.content === prefix + "hchannel") {
           if(!message.channel.guild) return;
           if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms :x:');
@@ -399,7 +399,7 @@ client.on('message', message => {
     
     
     client.on('message', message => {
-    var prefix = "!";
+    var prefix = "#";
           if(message.content === prefix + "schannel") {
           if(!message.channel.guild) return;
           if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
@@ -414,7 +414,7 @@ client.on('message', message => {
 
 client.on("message", (message) => {
     /// ALPHA CODES
-   if (message.content.startsWith("!ticket")) {     /// ALPHA CODES
+   if (message.content.startsWith("#ticket")) {     /// ALPHA CODES
         const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبه اسمه Support Team`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
@@ -445,7 +445,7 @@ client.on("message", (message) => {
     }
  
  
-  if (message.content.startsWith("!close")) {
+  if (message.content.startsWith("#close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
         message.channel.send(`هل أنت متأكد؟ بعد التأكيد ، لا يمكنك عكس هذا الإجراء!\n للتأكيد ، اكتب\`$confirm\`. سيؤدي ذلك إلى مهلة زمنية في غضون 10 ثوانٍ وإلغائها`)
@@ -469,7 +469,7 @@ client.on("message", (message) => {
 });
 	
 client.on('message', ra3d => {
-var prefix = "!";
+var prefix = "#";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
 if(ra3d.content.startsWith(prefix + 'ccolors')) {
     if(!args) return ra3d.channel.send('`يرجي اختيار كم لون `');
@@ -490,7 +490,7 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
 
 client.on('message', message => {
     if (!message.channel.guild) return;
-if(message.content =='!count')
+if(message.content =='#count')
 var IzRo = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
 .setFooter(message.author.username, message.author.avatarURL)
@@ -504,7 +504,7 @@ message.channel.send(IzRo);
 
 
                                         client.on('message', message => {
-                                        if (message.content.startsWith("!bans")) {
+                                        if (message.content.startsWith("#bans")) {
                                             message.guild.fetchBans()
                                             .then(bans => message.channel.send(`${bans.size} عدد اشخاص المبندة من السيرفر `))
                                       .catch(console.error);
@@ -513,7 +513,7 @@ message.channel.send(IzRo);
 
 
                                         client.on('message', message => { 
-                                        var prefix ="!";
+                                        var prefix ="#";
                                                if (message.content.startsWith(prefix + "user")) {
                                          var args = message.content.split(" ").slice(1);
                                          let user = message.mentions.users.first();
@@ -536,8 +536,7 @@ message.channel.send(IzRo);
                                           .setAuthor(message.author.username, message.author.avatarURL) 
                                         .setColor("#707070")
                                         .addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
-                                        .addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)               
-                                        .setFooter(`SkyBot.`, 'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')                                 
+                                        .addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)                              
                                         .setThumbnail(heg.avatarURL);
                                         message.channel.send(id)
                                     }       });
