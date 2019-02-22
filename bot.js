@@ -151,7 +151,7 @@ client.on ("guildMemberRemove", member => {
 
 client.on('guildMemberAdd', member => {
     const guild = member.guild;
-    guild.channels.find(channel => channel.name === "chat").send("Go to : #update "+member.user.username);
+    guild.channels.find(channel => channel.name === "chat").send("Welcome To Òreo "+member.user.username);
 });
 
  
